@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QLabel>
 #include "game.h"
 
 namespace Ui {
@@ -17,6 +18,12 @@ class MainWindow : public QMainWindow {
 
   // Игра
   Game game;
+
+  void boardLabel(char letter, int left, int top
+                  , int width);
+ protected:
+  // Отрисовка поля игры
+  void paintEvent(QPaintEvent*);
 
  private slots:
   void on_exitAction_triggered();

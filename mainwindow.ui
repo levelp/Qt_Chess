@@ -6,106 +6,139 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>524</width>
-    <height>363</height>
+    <width>660</width>
+    <height>499</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Шахматы</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QGraphicsView" name="graphicsView">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>40</y>
-      <width>281</width>
-      <height>231</height>
-     </rect>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+    </font>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="spacing">
+     <number>15</number>
     </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>10</y>
-      <width>81</width>
-      <height>16</height>
-     </rect>
+    <property name="leftMargin">
+     <number>6</number>
     </property>
-    <property name="text">
-     <string>Игровое поле</string>
+    <property name="topMargin">
+     <number>6</number>
     </property>
-   </widget>
-   <widget class="QListWidget" name="listWidget">
-    <property name="geometry">
-     <rect>
-      <x>330</x>
-      <y>100</y>
-      <width>171</width>
-      <height>192</height>
-     </rect>
+    <property name="rightMargin">
+     <number>6</number>
     </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>330</x>
-      <y>80</y>
-      <width>121</width>
-      <height>16</height>
-     </rect>
+    <property name="bottomMargin">
+     <number>6</number>
     </property>
-    <property name="text">
-     <string>Последние ходы</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>330</x>
-      <y>10</y>
-      <width>47</width>
-      <height>13</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Таймер</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>340</x>
-      <y>40</y>
-      <width>141</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Таймер первого игрока</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_5">
-    <property name="geometry">
-     <rect>
-      <x>340</x>
-      <y>60</y>
-      <width>47</width>
-      <height>13</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>TextLabel</string>
-    </property>
-   </widget>
+    <item>
+     <widget class="QWidget" name="chessBoard" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>445</width>
+        <height>445</height>
+       </size>
+      </property>
+      <widget class="QFrame" name="board">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>402</width>
+         <height>406</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>402</width>
+         <height>402</height>
+        </size>
+       </property>
+       <property name="baseSize">
+        <size>
+         <width>402</width>
+         <height>400</height>
+        </size>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="timerHeader">
+        <property name="font">
+         <font>
+          <family>Verdana</family>
+          <pointsize>16</pointsize>
+          <weight>50</weight>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Таймер</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="timerWhite">
+        <property name="text">
+         <string>Белые: 2:01:23</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="timerBlack">
+        <property name="text">
+         <string>Чёрные: 1:45:15</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lastMovesLabel">
+        <property name="text">
+         <string>Последние ходы:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QListWidget" name="lastMoves">
+        <item>
+         <property name="text">
+          <string>Белые: e2-e4</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>524</width>
+     <width>660</width>
      <height>21</height>
     </rect>
    </property>
