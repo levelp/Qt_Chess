@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>660</width>
-    <height>499</height>
+    <height>508</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -43,7 +43,7 @@
         <height>445</height>
        </size>
       </property>
-      <widget class="QFrame" name="board">
+      <widget class="ChessBoard" name="board">
        <property name="geometry">
         <rect>
          <x>20</x>
@@ -63,6 +63,9 @@
          <width>402</width>
          <height>400</height>
         </size>
+       </property>
+       <property name="acceptDrops">
+        <bool>true</bool>
        </property>
        <property name="frameShape">
         <enum>QFrame::Box</enum>
@@ -184,6 +187,14 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>ChessBoard</class>
+   <extends>QFrame</extends>
+   <header>chessboard.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

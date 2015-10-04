@@ -2,9 +2,8 @@
 #include <QPainter>
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "chessboard.h"
 
-// Размер клетки доски в пикселях
-const int CELL = 50;
 const int LABEL_HEIGHT = 20;
 const int LABEL_WIDTH = 15;
 
@@ -27,9 +26,12 @@ MainWindow::MainWindow(QWidget* parent) :
   ui->setupUi(this);
 
   // Настраиваем размер доски
-  QFrame* b = ui->board;
+  ChessBoard* b = ui->board;
   int boardSize = 8 * CELL + 2 * (b->lineWidth() + 2);
-  b->resize(boardSize, boardSize);
+  b->setGeometry(QRect(20, 20, boardSize, boardSize));
+  b->setMinimumSize(QSize(boardSize, boardSize));
+  b->setBaseSize(QSize(boardSize, boardSize));
+
   QRect g = b->geometry();
 
   // Вывод подписей к доске
@@ -44,6 +46,9 @@ MainWindow::MainWindow(QWidget* parent) :
     boardLabel(D, g.left() - LABEL_WIDTH, y, LABEL_WIDTH);
     boardLabel(D, g.left() + g.width(), y, LABEL_WIDTH);
   }
+
+  // Загрузка начальной конфигурации доски
+  ui->board->loadRes(":/data/board.txt");
 }
 
 MainWindow::~MainWindow() {

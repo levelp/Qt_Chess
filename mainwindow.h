@@ -19,8 +19,9 @@ class MainWindow : public QMainWindow {
   // Игра
   Game game;
 
-  void boardLabel(char letter, int left, int top
-                  , int width);
+  // Нарисовать букву или цифру рядом с доской
+  void boardLabel(char letter, int left, int top, int width);
+
  protected:
   // Отрисовка поля игры
   void paintEvent(QPaintEvent*);

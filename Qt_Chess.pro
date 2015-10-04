@@ -1,8 +1,4 @@
-#-------------------------------------------------
-#
-# Project created by QtCreator 2015-10-03T17:46:20
-#
-#-------------------------------------------------
+# Шахматы - основной файл проекта
 
 QT       += core gui
 
@@ -14,9 +10,17 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    game.cpp
+    game.cpp \
+    chessboard.cpp \
+    chesspiece.cpp
 
 HEADERS  += mainwindow.h \
-    game.h
+    game.h \
+    chessboard.h \
+    chesspiece.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    chessboard.ui
+
+RESOURCES += \
+    data.qrc
