@@ -87,7 +87,7 @@ void ChessBoard::mousePressEvent(QMouseEvent* event) {
   dataStream << pixmap << QPoint(event->pos() - piece->pos());
 
   QMimeData* mimeData = new QMimeData;
-  mimeData->setData("application/x-dnditemdata", itemData);
+  mimeData->setData(mimeFormat, itemData);
 
   QDrag* drag = new QDrag(this);
   drag->setMimeData(mimeData);
