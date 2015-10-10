@@ -17,7 +17,8 @@ SOURCES += main.cpp\
 HEADERS  += mainwindow.h \
     game.h \
     chessboard.h \
-    chesspiece.h
+    chesspiece.h \
+    addition.h
 
 FORMS    += mainwindow.ui \
     chessboard.ui

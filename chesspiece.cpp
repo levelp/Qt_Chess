@@ -21,8 +21,10 @@ ChessPiece::ChessPiece(ChessBoard* parent,
   setPixmap(QPixmap(png));
 
   qDebug() << "Фигура:" << id << s << t << png;
-
+  //параметр который обновляется только для пешек, ладей и короля
+  turn = -1;
   // Выравним фигуру по сетке
+
   alignToGrid();
   show();
   setAttribute(Qt::WA_DeleteOnClose);

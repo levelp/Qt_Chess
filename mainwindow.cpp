@@ -1,5 +1,6 @@
 #include <QLabel>
 #include <QPainter>
+#include <QDebug>
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "chessboard.h"
@@ -63,6 +64,7 @@ void MainWindow::on_exitAction_triggered() {
 // Отрисовка поля игры
 void MainWindow::paintEvent(QPaintEvent*) {
   QPainter p(this);
+  qDebug() << "paint";
 
   // Вычисляем координаты для рисования на форме
   QRect cw = ui->centralWidget->geometry();
@@ -72,12 +74,22 @@ void MainWindow::paintEvent(QPaintEvent*) {
   const int y = cw.top() + cb.top() + b.top() + ui->board->lineWidth() + 1;
 
   // Цвета клеток доски
-  QBrush color[] = { QBrush(Qt::white), QBrush(Qt::gray) } ;
+  QBrush disabledColor[] = { QBrush(Qt::white), QBrush(Qt::gray) } ;
+  QBrush enabledColor[] = { QBrush(Qt::green), QBrush(Qt::darkGray) } ;
 
   // Рисуем клетки доски
   for(int i = 0; i < 8; ++i)
     for(int j = 0; j < 8; ++j) {
-      p.setBrush(color[(i + j) % 2]);
+      switch(ui->board->avMoves[i][j]) {
+        case ENABLE:
+          p.setBrush(enabledColor[(i + j) % 2]);
+          break;
+
+        case DISABLE:
+          p.setBrush(disabledColor[(i + j) % 2]);
+          break;
+      }
+
       p.drawRect(x + j * CELL, y + i * CELL, CELL, CELL);
     }
 }
